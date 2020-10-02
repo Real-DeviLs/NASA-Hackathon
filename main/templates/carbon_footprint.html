@@ -33,7 +33,7 @@
 						{% csrf_token %}
 						<h3 id="home-energy-label"><i class="fa fa-home" aria-hidden="true"></i> Home Energy</h3>	
 						<div class="form-group">
-							<label for="electric">Monthly electric bill</label>
+							<label for="electric">daily electric consumption</label>
 							<div class="input-group">
 								<div class="input-group-addon">$</div>
 								<input class="form-control" name="electric" id="electric" type="number" min="0" step="0.01">
@@ -41,7 +41,7 @@
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
 						<div class="form-group">
-							<label for="gas">Monthly natural gas bill</label>
+							<label for="gas">Daily gas Usage</label>
 							<div class="input-group">
 								<div class="input-group-addon">$</div>
 								<input class="form-control" id="gas" name="gas" type="number" min="0" step="0.01">
@@ -49,7 +49,7 @@
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
 						<div class="form-group">
-							<label for="oil">Monthly oil bil</label>
+							<label for="oil">daily oil usage</label>
 							<p><i>Somes homes use oil as a fuel source for heating furnances or boilers, and is often abbreviated as HHO.</i></p>
 							<div class="input-group">
 								<div class="input-group-addon">$</div>
@@ -65,7 +65,7 @@
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
 						<div class="form-group">
-							<label for="flights-4-less">Number of flights taken in the past year (4 hours or less)</label>
+							<label for="flights-4-less">Number of flights hours</label>
 							<input class="form-control" id="flights-4-less" name="flights" type="number" min="0" step="1">
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
@@ -89,7 +89,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label>Do you recycle aluminum and tin?</label>
+							<label>Do you Eat Veg or Non Veg</label>
 							<div class="alert alert-danger" role="alert" id="alum-tin-alert"><strong>Oops!</strong> You need to make a selection.</div>
 							<div class="radio">
 								<label>

@@ -20,36 +20,36 @@ def index(request):
        "Purchase recycled toilet paper with plastic-free packaging.",
        "On the topic of toilets use scrap paper or newspaper or toilet paper to collect pet poo."]
 
-    source = requests.get('http://124.253.142.66').text
-    soup=BeautifulSoup(source,'lxml')
-    match=soup.p.text
+    # source = requests.get('http://124.253.142.66').text
+    # soup=BeautifulSoup(source,'lxml')
+    # match=soup.p.text
     
-    context = {
+    # context = {
         
-        'tip': random.choice(tips),
-        'data':match
-    }
+    #     'tip': random.choice(tips),
+    #     'data':match
+    # }
 
-    try :
-        user=request.user
-        if user:
-            today = datetime.datetime.now().date()
-            x=Water_level.objects.filter(user=request.user).first()
+    # try :
+    #     user=request.user
+    #     if user:
+    #         today = datetime.datetime.now().date()
+    #         x=Water_level.objects.filter(user=request.user).first()
 
-            if x :
-                y=x.time.date()
-                if y==today:
-                    return render(request,'index.html',context)
-                else:
-                    new=Water_level.objects.create(user=request.user)
-                    new.save()
-            else:
-                new=Water_level.objects.create(user=request.user)
-                new.save()
+    #         if x :
+    #             y=x.time.date()
+    #             if y==today:
+    #                 return render(request,'index.html',context)
+    #             else:
+    #                 new=Water_level.objects.create(user=request.user)
+    #                 new.save()
+    #         else:
+    #             new=Water_level.objects.create(user=request.user)
+    #             new.save()
             
-            return render(request, 'index.html',context)
-    except:
-        return render(request, 'index.html')
+    #         return render(request, 'index.html',context)
+    # except:
+    return render(request, 'index.html')
 
         
 
