@@ -19,18 +19,18 @@ def index(request):
        "Get a water-saving showerhead.”,“Use organic fertilisers.",
        "Purchase recycled toilet paper with plastic-free packaging.",
        "On the topic of toilets use scrap paper or newspaper or toilet paper to collect pet poo."]
-
-    source = requests.get('http://124.253.142.66').text
-    soup=BeautifulSoup(source,'lxml')
-    match=soup.p.text
-    
-    context = {
-        
-        'tip': random.choice(tips),
-        'data':match
-    }
-
     try :
+        source = requests.get('http://124.253.142.66').text
+        soup=BeautifulSoup(source,'lxml')
+        match=soup.p.text
+        
+        context = {
+            
+            'tip': random.choice(tips),
+            'data':match
+        }
+
+
         user=request.user
         if user:
             today = datetime.datetime.now().date()
